@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Panteha Behboodi, PhD</title>
 <meta name="description" content="Panteha Behboodi, PhD — Bioengineer and translational scientist specializing in organ-on-chip systems, multi-omic data analysis, and biotech research.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232f5d4f'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' fill='%23faf8f4' text-anchor='middle'%3EPB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,6 +14,7 @@
 <body>
 
 <div class="noise-overlay" aria-hidden="true"></div>
+<div class="scroll-progress" aria-hidden="true"><span></span></div>
 
 <header class="site-header">
   <div class="wrap header-inner">
@@ -51,8 +53,11 @@
         </div>
         <p class="hero-location">New York Metropolitan Area</p>
       </div>
-      <div class="hero-photo">
-        <img src="assets/headshot.jpg" alt="Portrait of Panteha Behboodi">
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-frame" aria-hidden="true"></div>
+        <div class="hero-photo">
+          <img src="assets/headshot.jpg" alt="Portrait of Panteha Behboodi">
+        </div>
       </div>
     </div>
   </section>
@@ -244,7 +249,7 @@
       </ul>
 
       <p class="pub-link">
-        <a href="#" id="scholar-link">View full publication list on Google Scholar &rarr;</a>
+        <a href="#" id="scholar-link">View full publication list on Google Scholar</a>
       </p>
     </div>
   </section>
