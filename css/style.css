@@ -458,6 +458,12 @@ p { margin: 0; }
   font-weight: 600;
 }
 
+.pub-note {
+  margin-top: 10px;
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+}
+
 .pub-link {
   margin-top: 30px;
 }
