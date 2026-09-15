@@ -458,6 +458,16 @@ p { margin: 0; }
   font-weight: 600;
 }
 
+.pub-list a {
+  color: var(--accent);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.pub-list a:hover {
+  border-bottom-color: var(--accent);
+}
+
 .pub-note {
   margin-top: 10px;
   font-size: 0.82rem;
