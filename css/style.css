@@ -351,18 +351,6 @@ p { margin: 0; }
   background: var(--line);
 }
 
-.col-heading {
-  font-family: var(--font-sans);
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 600;
-  margin-bottom: 18px;
-}
-
-.col-heading-spaced { margin-top: 44px; }
-
 /* ============================
    About
 ============================ */
@@ -379,140 +367,61 @@ p { margin: 0; }
 }
 
 /* ============================
-   Experience / Timeline
+   Page header (CV / Research)
 ============================ */
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 44px;
+.page-header {
+  padding: 72px 0 48px;
 }
 
-.timeline-item {
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 28px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid var(--line);
-  transition: opacity 0.2s ease;
+.page-header h1 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  letter-spacing: -0.01em;
 }
 
-.timeline-item:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.timeline-when {
-  position: relative;
-  padding-left: 18px;
-}
-
-.timeline-when::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 6px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-}
-
-.timeline-date {
-  font-size: 0.85rem;
-  color: var(--ink-faint);
-  font-weight: 500;
-}
-
-.timeline-body h3 {
-  font-size: 1.28rem;
-  margin-bottom: 4px;
-}
-
-.timeline-org {
-  font-size: 0.95rem;
-  color: var(--accent);
-  margin-bottom: 16px;
-  font-weight: 500;
-}
-
-.timeline-body ul {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.timeline-body li {
-  position: relative;
-  padding-left: 18px;
+.page-lede {
+  margin-top: 16px;
+  max-width: 620px;
+  font-size: 1.08rem;
   color: var(--ink-soft);
-  font-size: 0.98rem;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-.timeline-body li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.65em;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--accent);
-  opacity: 0.55;
+.cv-actions {
+  margin-top: 30px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
 /* ============================
-   Research / Education / Honors
+   CV embed
 ============================ */
-.research-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 56px;
+.cv-preview {
+  padding-top: 0;
+  border-top: none;
 }
 
-.edu-item {
-  margin-bottom: 30px;
+.cv-embed {
+  width: 100%;
+  height: 70vh;
+  min-height: 420px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 40px -22px rgba(28, 26, 23, 0.35);
 }
 
-.edu-item:last-child { margin-bottom: 0; }
-
-.edu-degree {
-  font-family: var(--font-serif);
-  font-size: 1.1rem;
-  margin-bottom: 3px;
-}
-
-.edu-school {
-  font-size: 0.9rem;
-  color: var(--accent);
-  margin-bottom: 8px;
-  font-weight: 500;
-}
-
-.edu-thesis {
-  font-size: 0.92rem;
-  color: var(--ink-soft);
-  line-height: 1.6;
-}
-
-.honors-list {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-}
-
-.honor-title {
+.cv-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
   display: block;
-  font-weight: 600;
-  font-size: 0.98rem;
-  margin-bottom: 4px;
 }
 
-.honor-detail {
-  display: block;
-  font-size: 0.9rem;
-  color: var(--ink-soft);
-  line-height: 1.55;
+.cv-fallback {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
 }
 
 /* ============================
@@ -574,71 +483,64 @@ p { margin: 0; }
 }
 
 /* ============================
-   Skills
+   Working Papers / Works in Progress
 ============================ */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+.paper-list {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
 }
 
-.skill-card {
-  background: var(--card-bg);
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  padding: 28px;
-  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+.paper-item {
+  padding-left: 18px;
+  border-left: 2px solid var(--accent);
 }
 
-.skill-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent);
-  box-shadow: 0 16px 32px -18px rgba(28, 26, 23, 0.25);
+.paper-item.is-progress {
+  border-left-color: var(--line);
 }
 
-.skill-card h3 {
-  font-size: 1rem;
-  font-family: var(--font-sans);
-  font-weight: 600;
-  margin-bottom: 12px;
+.paper-title {
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.paper-meta {
+  font-size: 0.88rem;
+  color: var(--ink-faint);
+}
+
+.paper-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  font-weight: 500;
   color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 1px;
 }
 
-.skill-card p {
-  font-size: 0.92rem;
-  color: var(--ink-soft);
-  line-height: 1.65;
+.paper-link::after {
+  content: '\2192';
+  transition: transform 0.18s ease;
+}
+
+.paper-link:hover::after {
+  transform: translateX(3px);
 }
 
 /* ============================
    Contact
 ============================ */
-.contact {
-  background: var(--bg-alt);
-}
-
-.contact-inner {
-  text-align: left;
-}
-
-.contact h2 {
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  margin-bottom: 14px;
-}
-
-.contact-lede {
-  max-width: 480px;
-  color: var(--ink-soft);
-  font-size: 1.02rem;
-  line-height: 1.65;
-  margin-bottom: 32px;
-}
-
 .contact-links {
   display: flex;
   gap: 28px;
   flex-wrap: wrap;
-  margin-bottom: 28px;
+  margin-bottom: 16px;
 }
 
 .contact-link {
@@ -706,18 +608,13 @@ p { margin: 0; }
     padding: 16px var(--gutter);
   }
 
-  .timeline-item {
-    grid-template-columns: 1fr;
-    gap: 10px;
+  .page-header {
+    padding: 48px 0 36px;
   }
 
-  .research-grid {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
+  .cv-embed {
+    height: 60vh;
+    min-height: 320px;
   }
 
   .hero {

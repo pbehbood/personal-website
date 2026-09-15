@@ -36,10 +36,18 @@ if (progressBar) {
   window.addEventListener('resize', updateProgress);
 }
 
+// Active nav link, based on which page is currently loaded
+const currentPage = document.body.dataset.page;
+if (currentPage) {
+  document.querySelectorAll('.nav-links a[data-page]').forEach((a) => {
+    if (a.dataset.page === currentPage) a.classList.add('active');
+  });
+}
+
 // Scroll-reveal animations
 if (!prefersReducedMotion && 'IntersectionObserver' in window) {
   const revealTargets = document.querySelectorAll(
-    '.about-text, .timeline-item, .edu-item, .honors-list li, .pub-list li, .skill-card'
+    '.about-text, .pub-list li, .paper-item'
   );
 
   revealTargets.forEach((el) => el.classList.add('reveal'));
@@ -60,27 +68,4 @@ if (!prefersReducedMotion && 'IntersectionObserver' in window) {
     el.style.transitionDelay = Math.min(i % 5, 4) * 60 + 'ms';
     revealObserver.observe(el);
   });
-}
-
-// Active nav link tracking
-const sections = document.querySelectorAll('main section[id]');
-const navAnchors = document.querySelectorAll('.nav-links a');
-
-if (sections.length && navAnchors.length && 'IntersectionObserver' in window) {
-  const setActive = (id) => {
-    navAnchors.forEach((a) => {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + id);
-    });
-  };
-
-  const sectionObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) setActive(entry.target.id);
-      });
-    },
-    { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
-  );
-
-  sections.forEach((section) => sectionObserver.observe(section));
 }
