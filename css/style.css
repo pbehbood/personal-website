@@ -468,6 +468,12 @@ p { margin: 0; }
   border-bottom-color: var(--accent);
 }
 
+.pub-list .paper-link {
+  display: flex;
+  width: fit-content;
+  border-bottom: 1px solid var(--accent);
+}
+
 .pub-note {
   margin-top: 10px;
   font-size: 0.82rem;
