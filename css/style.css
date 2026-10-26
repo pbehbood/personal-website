@@ -468,6 +468,17 @@ p { margin: 0; }
   border-bottom-color: var(--accent);
 }
 
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin-top: 10px;
+}
+
+.paper-links .paper-link {
+  margin-top: 0;
+}
+
 .pub-list .paper-link {
   display: flex;
   width: fit-content;
